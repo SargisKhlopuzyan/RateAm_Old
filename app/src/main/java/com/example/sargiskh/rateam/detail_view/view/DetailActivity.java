@@ -1,18 +1,26 @@
 package com.example.sargiskh.rateam.detail_view.view;
 
+import android.Manifest;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,15 +37,20 @@ import com.example.sargiskh.rateam.detail_view.model.Branch;
 import com.example.sargiskh.rateam.detail_view.model.ResponseBranches;
 import com.example.sargiskh.rateam.detail_view.presenter.DetailViewDataController;
 import com.example.sargiskh.rateam.detail_view.presenter.DetailViewPresenter;
+import com.example.sargiskh.rateam.enums.DaysOfWeekEnum;
 import com.example.sargiskh.rateam.enums.ExchangeTypeEnum;
 import com.example.sargiskh.rateam.helper.HelperBranch;
+import com.example.sargiskh.rateam.main_view.MainActivity;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Organization;
 import com.example.sargiskh.rateam.util.Constants;
 
 import java.lang.reflect.Method;
+import java.time.DayOfWeek;
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity implements DetailViewInterface, DetailViewBranchListAdapter.BranchSelectedInterface {
+
+    private final int REQUEST_PHONE_CALL = 0;
 
     private Menu menu;
 
@@ -236,19 +249,74 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         if (branch == null) {
             return;
         }
-        textViewOrganizationTitle.setText(branch.title.am);
-        textViewOrganizationAddress.setText(branch.address.am);
-        textViewOrganizationPhoneNumbers.setText(branch.contacts);
+        String title = branch.title.am != null ? branch.title.am : branch.title.ru;
+        title = title != null ? title : branch.title.en;
+        title = title != null ? title : "";
+
+        String address = branch.address.am != null ? branch.address.am : branch.address.ru;
+        address = address != null ? address : branch.address.en;
+        address = address != null ? address : "";
+
+        String contacts = branch.contacts;
+        contacts = contacts.replaceAll("[() ]","");
+        contacts = (contacts.charAt(0) != '+' ? "+" : "") + contacts;
 
         String workingDayTime = "";
         for (int i = 0; i < branch.workhours.size(); i++) {
             if (i != 0) {
                 workingDayTime += "\n";
             }
-            workingDayTime += branch.workhours.get(i).days + "   " + branch.workhours.get(i).hours;
+            String workingDays = branch.workhours.get(i).days.trim();
+            if (workingDays.contains("-")) {
+                workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0))].toString() + " - " + DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(2))].toString();
+            } else {
+                workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0))].toString().toUpperCase();
+            }
+            String workingDaysCapitalize = workingDays.substring(0, 1).toUpperCase() + workingDays.substring(1);
+            workingDayTime += workingDaysCapitalize + "   " + branch.workhours.get(i).hours;
         }
 
+        textViewOrganizationTitle.setText(title);
+        textViewOrganizationAddress.setText(address);
+        SpannableString content = new SpannableString(contacts);
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        textViewOrganizationPhoneNumbers.setText(content);
         textViewOrganizationWorkingDaysHours.setText(workingDayTime);
+
+
+        if (!contacts.isEmpty()) {
+            textViewOrganizationPhoneNumbers.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (ContextCompat.checkSelfPermission(DetailActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(DetailActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
+                    }
+                    else
+                    {
+                        makeACall();
+                    }
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_PHONE_CALL: {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    makeACall();
+                }
+                return;
+            }
+        }
+    }
+
+    private void makeACall() {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        final String uri = "tel:" + textViewOrganizationPhoneNumbers.getText().toString().trim();
+        intent.setData(Uri.parse(uri));
+        startActivity(intent);
     }
 
 }

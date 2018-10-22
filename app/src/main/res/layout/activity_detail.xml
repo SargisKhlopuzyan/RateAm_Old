@@ -70,19 +70,21 @@
                                 android:minHeight="@dimen/collapsing_toolbar_text_view_min_height"
                                 android:layout_marginTop="60dp"
                                 android:textColor="@android:color/black"
-                                android:gravity="center_horizontal"/>
+                                android:gravity="center"/>
                             <TextView
                                 android:id="@+id/textViewOrganizationTitle"
-                                android:text="GLxamas"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:textColor="@android:color/black"
                                 android:minHeight="@dimen/collapsing_toolbar_text_view_min_height"
-                                android:gravity="center_horizontal"/>
+                                android:gravity="center"/>
 
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_marginRight="20dp"
                                 android:layout_marginLeft="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
                                 android:background="@android:color/darker_gray"
                                 android:layout_height="1dp"/>
 
@@ -92,40 +94,44 @@
                                 android:layout_height="wrap_content"
                                 android:minHeight="@dimen/collapsing_toolbar_text_view_min_height"
                                 android:textColor="@android:color/black"
-                                android:gravity="center_horizontal"/>
+                                android:gravity="center"/>
 
                             <TextView
                                 android:id="@+id/textViewOrganizationPhoneNumbers"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/icons_phone"
+                                android:drawablePadding="8dp"
                                 android:minHeight="@dimen/collapsing_toolbar_text_view_min_height"
                                 android:textColor="@android:color/black"
-                                android:gravity="center_horizontal"/>
+                                android:gravity="center"/>
 
                             <TextView
                                 android:id="@+id/textViewOrganizationContactNumber"
                                 android:text="@string/contact_number"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textColor="@android:color/black"
-                                android:paddingBottom="30dp"
-                                android:gravity="center_horizontal"/>
+                                android:textColor="@android:color/darker_gray"
+                                android:paddingBottom="20dp"
+                                android:gravity="center"/>
 
                             <TextView
                                 android:id="@+id/textViewOrganizationWorkingDaysHours"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:drawableLeft="@drawable/icons_calendar"
+                                android:drawablePadding="8dp"
                                 android:minHeight="@dimen/collapsing_toolbar_text_view_min_height"
                                 android:textColor="@android:color/black"
-                                android:gravity="center_horizontal"/>
+                                android:gravity="center"/>
 
                             <TextView
                                 android:id="@+id/textViewOrganizationWorkingDays"
                                 android:text="@string/working_days"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:gravity="center_horizontal"
-                                android:textColor="@android:color/black"
+                                android:gravity="center"
+                                android:textColor="@android:color/darker_gray"
                                 android:paddingBottom="30dp"/>
 
                             <View
