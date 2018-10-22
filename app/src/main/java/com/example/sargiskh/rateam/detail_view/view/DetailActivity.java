@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,11 +34,17 @@ import com.example.sargiskh.rateam.helper.HelperBranch;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Organization;
 import com.example.sargiskh.rateam.util.Constants;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class DetailActivity extends AppCompatActivity implements DetailViewInterface, DetailViewBranchListAdapter.BranchSelectedInterface {
 
     private Menu menu;
+
+    private NestedScrollView nestedScrollView;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
+    private Toolbar toolbar;
+    private AppBarLayout appBarLayout;
 
     private ImageView imageView;
     private TextView textViewOrganizationName;
@@ -50,12 +59,9 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerViewCurrencyList;
     private RecyclerView recyclerViewBranchList;
-    private Toolbar toolbar;
-    private AppBarLayout appBarLayout;
 
     private DetailViewPresenter detailViewPresenter;
     private DetailViewDataController detailViewDataController;
-    private CollapsingToolbarLayout collapsingToolbarLayout;
 
     private Organization organization;
 
@@ -148,8 +154,8 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
 
         // Stop refresh animation
         swipeRefreshLayout.setRefreshing(false);
-//        textViewStatus.setVisibility(View.GONE);
         recyclerViewBranchList.setVisibility(View.VISIBLE);
+
     }
 
     @Override
@@ -158,6 +164,7 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
     }
 
     private void findViews() {
+        nestedScrollView = findViewById(R.id.nestedScrollView);
         imageView = findViewById(R.id.imageView);
         textViewOrganizationName = findViewById(R.id.textViewOrganizationName);
         textViewOrganizationTitle = findViewById(R.id.textViewOrganizationTitle);
@@ -215,6 +222,8 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
     @Override
     public void onBranchListItemClicked(Branch branch) {
         updateBranchInfo(branch);
+        appBarLayout.setExpanded(true);
+        nestedScrollView.scrollTo(0, 0);
     }
 
     @Override
@@ -241,4 +250,5 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
 
         textViewOrganizationWorkingDaysHours.setText(workingDayTime);
     }
+
 }
