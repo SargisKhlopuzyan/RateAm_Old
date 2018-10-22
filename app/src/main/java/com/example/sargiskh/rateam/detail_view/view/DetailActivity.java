@@ -217,6 +217,12 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         updateBranchInfo(branch);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        detailViewDataController.setData(null);
+    }
+
     private void updateBranchInfo(Branch branch) {
         if (branch == null) {
             return;

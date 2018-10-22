@@ -3,6 +3,7 @@ package com.example.sargiskh.rateam.detail_view.presenter;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
+import android.util.Log;
 
 import com.example.sargiskh.rateam.detail_view.model.Branch;
 import com.example.sargiskh.rateam.detail_view.model.ResponseBranches;
@@ -36,6 +37,9 @@ public class DetailViewDataController {
     }
 
     public void setData(ResponseBranches data) {
+        if (data == null) {
+            Log.e("LOG_TAG", "ResponseBranches == null");
+        }
         liveData.setValue(data);
     }
 

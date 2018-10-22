@@ -116,7 +116,9 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
 
     @Override
     public void displayError(String errorMessage) {
-
+        // Stop refresh animation
+        swipeRefreshLayout.setRefreshing(false);
+        recyclerView.setVisibility(View.VISIBLE);
     }
 
     private void findViews(View view) {

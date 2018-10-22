@@ -1,5 +1,7 @@
 package com.example.sargiskh.rateam.detail_view.presenter;
 
+import android.util.Log;
+
 import com.example.sargiskh.rateam.detail_view.model.ResponseBranches;
 import com.example.sargiskh.rateam.detail_view.network.BranchesAPIService;
 import com.example.sargiskh.rateam.detail_view.network.BranchesRetrofitClientInstance;
@@ -34,6 +36,8 @@ public class DetailViewPresenter implements DetailViewPresenterInterface {
 
             @Override
             public void onFailure(Call<ResponseBranches> call, Throwable t) {
+                DetailViewDataController.getInstance().setData(null);
+                Log.e("LOG_TAG", "onFailure: " + t);
                 detailViewInterface.displayError(t.getMessage());
             }
         });
