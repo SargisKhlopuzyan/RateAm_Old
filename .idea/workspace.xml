@@ -20,13 +20,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/util/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/calculator_selecor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/calculator_selecor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/more_selecor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/more_selecor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/rates_selecor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rates_selecor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/transaction_selecor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/transaction_selecor.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,48 +51,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ErrorMessageDialogFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/dialog/ErrorMessageDialogFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-              <folding>
-                <element signature="e#1272#1303#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExchangeTypeDialogFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/dialog/exchenge_type_dialog/ExchangeTypeDialogFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BanksFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="213" column="114" lean-forward="true" selection-start-line="198" selection-start-column="16" selection-end-line="213" selection-end-column="114" />
+            <state relative-caret-position="-880">
+              <caret line="120" column="36" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#BanksFragment#0;class#BanksFragment#0" />
+                <element signature="e#3326#3541#0" expanded="true" />
+                <element signature="e#3540#3541#0" expanded="true" />
                 <element signature="method#findViews#0;class#BanksFragment#0" />
-                <element signature="method#populateViews#0;class#BanksFragment#0" />
                 <element signature="method#handleCurrencyTypeChange#0;class#BanksFragment#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DetailActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DetailActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+            <state relative-caret-position="204">
+              <caret line="88" column="56" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
               <folding>
                 <element signature="e#4144#4329#0" expanded="true" />
                 <element signature="e#4328#4329#0" expanded="true" />
@@ -105,6 +87,42 @@
                 <element signature="method#onRequestPermissionsResult#0;class#DetailActivity#0" />
                 <element signature="method#makeACall#0;class#DetailActivity#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+              <folding>
+                <element signature="method#setupTabIcons#0;class#MainActivity#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="more_selecor.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/more_selecor.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calculator_selecor.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/calculator_selecor.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -167,9 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>buttonExchangeType</find>
-      <find>getSupportFragmentManager</find>
-      <find>currencyType</find>
       <find>BanksAdapterDataModel</find>
       <find>RecyclerView</find>
       <find>currencyList</find>
@@ -197,6 +212,9 @@
       <find>textViewOrganizationTitle</find>
       <find>head</find>
       <find>ExchangeTypeDialogFragment</find>
+      <find>error</find>
+      <find>recyclerView.setVisibility(V</find>
+      <find>recyclerView.setVisibility</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2461,10 +2479,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/model/currency/USD.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/model/currency/XAU.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/helper/BanksDataFilter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/model/Organization.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/util/Constants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/DetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/decoration_fragment/calculator/CalculatorFragment.java" />
@@ -2501,7 +2515,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/presenter/DetailViewPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/presenter/DetailViewDataController.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/HelperBranch.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_scrolling.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
@@ -2512,6 +2525,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/util/Constants.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/dialog/ErrorMessageDialogFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/rates_selecor.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/transaction_selecor.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/calculator_selecor.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/more_selecor.xml" />
       </list>
     </option>
   </component>
@@ -2552,63 +2570,12 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="main_view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="main_view" type="462c0819:PsiDirectoryNode" />
-              <item name="rates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="main_view" type="462c0819:PsiDirectoryNode" />
-              <item name="rates" type="462c0819:PsiDirectoryNode" />
-              <item name="banks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="main_view" type="462c0819:PsiDirectoryNode" />
-              <item name="rates" type="462c0819:PsiDirectoryNode" />
-              <item name="banks" type="462c0819:PsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="main_view" type="462c0819:PsiDirectoryNode" />
-              <item name="rates" type="462c0819:PsiDirectoryNode" />
-              <item name="banks" type="462c0819:PsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
-              <item name="exchenge_type_dialog" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
@@ -2627,7 +2594,7 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="1015faed6f163d05" />
+    <property name="device.picker.selection" value="R9G7N18419000083" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -2796,7 +2763,7 @@
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Preview" order="3" weight="0.34861407" />
+      <window_info active="true" anchor="right" id="Preview" order="3" visible="true" weight="0.34861407" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -2804,7 +2771,7 @@
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.58766234" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
       <window_info anchor="right" id="Gradle" order="3" />
@@ -2862,38 +2829,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/ExchangeTypeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortOrderEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortTypeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/HelperCurrencyIcons.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-          <folding>
-            <element signature="method#getCurrencyIconList#0;class#HelperCurrencyIcons#0" />
-            <element signature="method#getCurrencyIconIdHashMapByCurrencyType#0;class#HelperCurrencyIcons#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/HelperOrganization.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -3085,16 +3020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="method#setupTabIcons#0;class#MainActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -3251,24 +3176,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="213" column="114" lean-forward="true" selection-start-line="198" selection-start-column="16" selection-end-line="213" selection-end-column="114" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BanksFragment#0;class#BanksFragment#0" />
-            <element signature="method#findViews#0;class#BanksFragment#0" />
-            <element signature="method#populateViews#0;class#BanksFragment#0" />
-            <element signature="method#handleCurrencyTypeChange#0;class#BanksFragment#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/dialog/ErrorMessageDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
           <folding>
             <element signature="e#1272#1303#0" expanded="true" />
           </folding>
@@ -3278,14 +3189,29 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/dialog/exchenge_type_dialog/ExchangeTypeDialogFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-880">
+          <caret line="120" column="36" selection-start-line="120" selection-start-column="8" selection-end-line="120" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#BanksFragment#0;class#BanksFragment#0" />
+            <element signature="e#3326#3541#0" expanded="true" />
+            <element signature="e#3540#3541#0" expanded="true" />
+            <element signature="method#findViews#0;class#BanksFragment#0" />
+            <element signature="method#handleCurrencyTypeChange#0;class#BanksFragment#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+        <state relative-caret-position="204">
+          <caret line="88" column="56" selection-start-line="88" selection-start-column="56" selection-end-line="88" selection-end-column="56" />
           <folding>
             <element signature="e#4144#4329#0" expanded="true" />
             <element signature="e#4328#4329#0" expanded="true" />
@@ -3300,6 +3226,56 @@
             <element signature="method#onRequestPermissionsResult#0;class#DetailActivity#0" />
             <element signature="method#makeACall#0;class#DetailActivity#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/rates_selecor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/transaction_selecor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/calculator_selecor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="method#setupTabIcons#0;class#MainActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/more_selecor.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
         </state>
       </provider>
     </entry>
