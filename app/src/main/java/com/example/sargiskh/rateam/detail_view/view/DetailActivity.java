@@ -12,6 +12,9 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -37,11 +40,14 @@ import com.example.sargiskh.rateam.detail_view.model.Branch;
 import com.example.sargiskh.rateam.detail_view.model.ResponseBranches;
 import com.example.sargiskh.rateam.detail_view.presenter.DetailViewDataController;
 import com.example.sargiskh.rateam.detail_view.presenter.DetailViewPresenter;
+import com.example.sargiskh.rateam.dialog.ErrorMessageDialogFragment;
 import com.example.sargiskh.rateam.enums.DaysOfWeekEnum;
 import com.example.sargiskh.rateam.enums.ExchangeTypeEnum;
 import com.example.sargiskh.rateam.helper.HelperBranch;
 import com.example.sargiskh.rateam.main_view.MainActivity;
+import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.dialog.exchenge_type_dialog.ExchangeTypeDialogFragment;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Organization;
+import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.view.BanksFragment;
 import com.example.sargiskh.rateam.util.Constants;
 
 import java.lang.reflect.Method;
@@ -135,7 +141,7 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
 
     private void setOrganizationName() {
         textViewOrganizationName.setText(organization.title);
-        imageView.setImageResource(R.drawable.icon_bank); // TODO
+        imageView.setImageResource(R.drawable.icon_bank); // TODO - Need to be replaced with appropriate bank icon
     }
 
     @Override
@@ -163,6 +169,9 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         }
 
         Branch branch = HelperBranch.getHeadBranch(responseBranches, 1);
+        if (branch == null && branchList.size() > 0) {
+            branch = branchList.get(0);
+        }
         updateBranchInfo(branch);
 
         // Stop refresh animation
@@ -173,7 +182,7 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
 
     @Override
     public void displayError(String errorMessage) {
-
+        showErrorDialog(errorMessage);
     }
 
     private void findViews() {
@@ -269,11 +278,12 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
             String workingDays = branch.workhours.get(i).days.trim();
             if (workingDays.contains("-")) {
                 workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0))].toString() + " - " + DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(2))].toString();
+                workingDays = workingDays.substring(0, 1).toUpperCase() + workingDays.substring(1);
             } else {
                 workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0))].toString().toUpperCase();
             }
-            String workingDaysCapitalize = workingDays.substring(0, 1).toUpperCase() + workingDays.substring(1);
-            workingDayTime += workingDaysCapitalize + "   " + branch.workhours.get(i).hours;
+
+            workingDayTime += workingDays + "   " + branch.workhours.get(i).hours;
         }
 
         textViewOrganizationTitle.setText(title);
@@ -317,6 +327,23 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         final String uri = "tel:" + textViewOrganizationPhoneNumbers.getText().toString().trim();
         intent.setData(Uri.parse(uri));
         startActivity(intent);
+    }
+
+    private void showErrorDialog(String errorMessage) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        Fragment prev = getSupportFragmentManager().findFragmentByTag("ErrorMessageDialogFragment");
+        if (prev != null) {
+            return;
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.BUNDLE_ERROR_MESSAGE, errorMessage);
+
+        ft.addToBackStack(null);
+        DialogFragment dialogFragment = new ErrorMessageDialogFragment();
+        dialogFragment.setArguments(bundle);
+
+        getSupportFragmentManager().beginTransaction().add(dialogFragment,"ErrorMessageDialogFragment").commit();
     }
 
 }

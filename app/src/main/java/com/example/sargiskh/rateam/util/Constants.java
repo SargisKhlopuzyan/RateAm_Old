@@ -6,6 +6,7 @@ public interface Constants {
     String BANKS_INFORMATION_URL = "http://rate.am/ws/mobile/v2/rates.ashx?lang=en";
     String BANK_INFORMATION_URL = "http://rate.am/ws/mobile/v2/branches.ashx?id=";
 
+    String BUNDLE_ERROR_MESSAGE = "ERROR_MESSAGE";
     String BUNDLE_EXCHANGE_TYPE = "EXCHANGE_TYPE";
     String BUNDLE_CURRENCY_TYPE = "CURRENCY_TYPE";
     String BUNDLE_ORGANIZATION_ID = "ORGANIZATION_ID";

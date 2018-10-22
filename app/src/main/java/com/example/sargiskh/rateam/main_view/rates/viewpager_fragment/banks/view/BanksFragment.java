@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.sargiskh.rateam.R;
+import com.example.sargiskh.rateam.dialog.ErrorMessageDialogFragment;
 import com.example.sargiskh.rateam.enums.CurrencyTypeEnum;
 import com.example.sargiskh.rateam.enums.ExchangeTypeEnum;
 import com.example.sargiskh.rateam.enums.SortOrderEnum;
@@ -111,14 +112,13 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
 
         // Stop refresh animation
         swipeRefreshLayout.setRefreshing(false);
-        recyclerView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void displayError(String errorMessage) {
         // Stop refresh animation
         swipeRefreshLayout.setRefreshing(false);
-        recyclerView.setVisibility(View.VISIBLE);
+        showErrorDialog(errorMessage);
     }
 
     private void findViews(View view) {
@@ -337,6 +337,23 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
     private void updateResortData() {
         Map<String, Organization> organizationMap = banksDataController.getData().getValue();
         updateOrganizationData(organizationMap);
+    }
+
+    private void showErrorDialog(String errorMessage) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("ErrorMessageDialogFragment");
+        if (prev != null) {
+            return;
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putString(Constants.BUNDLE_ERROR_MESSAGE, errorMessage);
+
+        ft.addToBackStack(null);
+        DialogFragment dialogFragment = new ErrorMessageDialogFragment();
+        dialogFragment.setArguments(bundle);
+
+        getFragmentManager().beginTransaction().add(dialogFragment,"ErrorMessageDialogFragment").commit();
     }
 
 }
