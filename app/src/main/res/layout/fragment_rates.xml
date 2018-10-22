@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".main_view.rates.RatesFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/rates_radio_group_vertical_padding"
+        android:paddingBottom="@dimen/rates_radio_group_vertical_padding"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/radioButtonBanks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:checked="true"
+            android:text="@string/banks"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/radioButtonExchangePoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:text="@string/exchange_point"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:id="@+id/radioButtonCB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.1"
+            android:scaleY="1.1"
+            android:text="@string/cb"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+    </RadioGroup>
+
+    <com.example.sargiskh.rateam.main_view.rates.NonSwipeableViewPager
+        android:id="@+id/viewpager"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
