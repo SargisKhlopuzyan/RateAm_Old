@@ -2,6 +2,7 @@ package com.example.sargiskh.rateam.helper;
 
 import com.example.sargiskh.rateam.enums.CurrencyTypeEnum;
 import com.example.sargiskh.rateam.enums.ExchangeTypeEnum;
+import com.example.sargiskh.rateam.enums.SortOrderEnum;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.CurrencyList;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Organization;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Transaction;
@@ -11,6 +12,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public final class FilterHelperOrganization {
 
@@ -150,9 +152,7 @@ public final class FilterHelperOrganization {
         return false;
     }
 
-
     ///////////////////
-
 
     public static List<CurrencyTypeEnum> getCurrencyListContainedInOrganizationForExchangeType(Organization organization, ExchangeTypeEnum exchangeType) {
 
@@ -166,8 +166,6 @@ public final class FilterHelperOrganization {
 
         return currencyTypeList;
     }
-
-
 
     public static Map<CurrencyTypeEnum, Transaction> getOrganizationTransactionListByExchangeType(Organization organization, ExchangeTypeEnum exchangeType) {
 
@@ -296,22 +294,635 @@ public final class FilterHelperOrganization {
     }
 
 
-    //TODO -Need to be implemented for all cases
+    public static TreeMap<String, Organization> sortMapForPurchase(Map<String, Organization> map, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
+        Comparator<String> comparator = new ComparatorForPurchase(map, exchangeType, currencyType, sortOrder);
+        //TreeMap is a map sorted by its keys.
+        //The comparator is used to sort the TreeMap by keys.
+        TreeMap<String, Organization> result = new TreeMap<String, Organization>(comparator);
+        result.putAll(map);
+        return result;
+    }
 
-    public static Comparator<Organization> OrganizationComparatorForSaleByAscendingOrderFor = new Comparator<Organization>() {
+    public static TreeMap<String, Organization> sortMapForSale(Map<String, Organization> map, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
+        Comparator<String> comparator = new ComparatorForSale(map, exchangeType, currencyType, sortOrder);
+        //TreeMap is a map sorted by its keys.
+        //The comparator is used to sort the TreeMap by keys.
+        TreeMap<String, Organization> result = new TreeMap<String, Organization>(comparator);
+        result.putAll(map);
+        return result;
+    }
 
-        public int compare(Organization organization1, Organization organization2) {
+    static class ComparatorForPurchase implements Comparator<String>{
 
-            Float buy1 = organization1.currencyList.USD.cash.buy;
-            Float buy2 = organization2.currencyList.USD.cash.buy;
+        Map<String, Organization> map = new HashMap<String, Organization>();
+        ExchangeTypeEnum exchangeType;
+        CurrencyTypeEnum currencyType;
+        SortOrderEnum sortOrder;
 
-            //ascending order
-//            return buy1.compareTo(buy2);
-
-            //descending order
-            return buy1.compareTo(buy2);
+        public ComparatorForPurchase(Map<String, Organization> map, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
+            this.map.putAll(map);
+            this.exchangeType = exchangeType;
+            this.currencyType = currencyType;
+            this.sortOrder = sortOrder;
         }
 
-    };
+        @Override
+        public int compare(String s1, String s2) {
 
+            switch (exchangeType) {
+                case Cash:
+                    switch (currencyType) {
+                        case AUD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.AUD.cash.buy >= map.get(s2).currencyList.AUD.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.AUD.cash.buy <= map.get(s2).currencyList.AUD.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case CAD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CAD.cash.buy >= map.get(s2).currencyList.CAD.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CAD.cash.buy <= map.get(s2).currencyList.CAD.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case XAU:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.XAU.cash.buy >= map.get(s2).currencyList.XAU.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.XAU.cash.buy <= map.get(s2).currencyList.XAU.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case USD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.USD.cash.buy >= map.get(s2).currencyList.USD.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.USD.cash.buy <= map.get(s2).currencyList.USD.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case RUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.RUR.cash.buy >= map.get(s2).currencyList.RUR.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.RUR.cash.buy <= map.get(s2).currencyList.RUR.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case JPY:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.JPY.cash.buy >= map.get(s2).currencyList.JPY.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.JPY.cash.buy <= map.get(s2).currencyList.JPY.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GEL:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GEL.cash.buy >= map.get(s2).currencyList.GEL.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GEL.cash.buy <= map.get(s2).currencyList.GEL.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GBP:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GBP.cash.buy >= map.get(s2).currencyList.GBP.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GBP.cash.buy <= map.get(s2).currencyList.GBP.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case EUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.EUR.cash.buy >= map.get(s2).currencyList.EUR.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.EUR.cash.buy <= map.get(s2).currencyList.EUR.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case CHF:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CHF.cash.buy >= map.get(s2).currencyList.CHF.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CHF.cash.buy <= map.get(s2).currencyList.CHF.cash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                    }
+                    break;
+                case NonCash:
+                    switch (currencyType) {
+                        case AUD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.AUD.nonCash.buy >= map.get(s2).currencyList.AUD.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.AUD.nonCash.buy <= map.get(s2).currencyList.AUD.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case CAD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CAD.nonCash.buy >= map.get(s2).currencyList.CAD.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CAD.nonCash.buy <= map.get(s2).currencyList.CAD.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case XAU:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.XAU.nonCash.buy >= map.get(s2).currencyList.XAU.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.XAU.nonCash.buy <= map.get(s2).currencyList.XAU.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case USD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.USD.nonCash.buy >= map.get(s2).currencyList.USD.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.USD.nonCash.buy <= map.get(s2).currencyList.USD.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case RUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.RUR.nonCash.buy >= map.get(s2).currencyList.RUR.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.RUR.nonCash.buy <= map.get(s2).currencyList.RUR.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case JPY:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.JPY.nonCash.buy >= map.get(s2).currencyList.JPY.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.JPY.nonCash.buy <= map.get(s2).currencyList.JPY.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GEL:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GEL.nonCash.buy >= map.get(s2).currencyList.GEL.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GEL.nonCash.buy <= map.get(s2).currencyList.GEL.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GBP:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GBP.nonCash.buy >= map.get(s2).currencyList.GBP.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GBP.nonCash.buy <= map.get(s2).currencyList.GBP.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case EUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.EUR.nonCash.buy >= map.get(s2).currencyList.EUR.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.EUR.nonCash.buy <= map.get(s2).currencyList.EUR.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case CHF:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CHF.nonCash.buy >= map.get(s2).currencyList.CHF.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CHF.nonCash.buy <= map.get(s2).currencyList.CHF.nonCash.buy) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                    }
+                    break;
+            }
+            return 1;
+        }
+    }
+
+    static class ComparatorForSale implements Comparator<String>{
+
+        Map<String, Organization> map = new HashMap<String, Organization>();
+        ExchangeTypeEnum exchangeType;
+        CurrencyTypeEnum currencyType;
+        SortOrderEnum sortOrder;
+
+        public ComparatorForSale(Map<String, Organization> map, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
+            this.map.putAll(map);
+            this.exchangeType = exchangeType;
+            this.currencyType = currencyType;
+            this.sortOrder = sortOrder;
+        }
+
+        @Override
+        public int compare(String s1, String s2) {
+
+            switch (exchangeType) {
+                case Cash:
+                    switch (currencyType) {
+                        case AUD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.AUD.cash.sell >= map.get(s2).currencyList.AUD.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.AUD.cash.sell <= map.get(s2).currencyList.AUD.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case CAD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CAD.cash.sell >= map.get(s2).currencyList.CAD.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CAD.cash.sell <= map.get(s2).currencyList.CAD.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case XAU:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.XAU.cash.sell >= map.get(s2).currencyList.XAU.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.XAU.cash.sell <= map.get(s2).currencyList.XAU.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case USD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.USD.cash.sell >= map.get(s2).currencyList.USD.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.USD.cash.sell <= map.get(s2).currencyList.USD.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case RUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.RUR.cash.sell >= map.get(s2).currencyList.RUR.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.RUR.cash.sell <= map.get(s2).currencyList.RUR.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case JPY:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.JPY.cash.sell >= map.get(s2).currencyList.JPY.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.JPY.cash.sell <= map.get(s2).currencyList.JPY.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GEL:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GEL.cash.sell >= map.get(s2).currencyList.GEL.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GEL.cash.sell <= map.get(s2).currencyList.GEL.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GBP:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GBP.cash.sell >= map.get(s2).currencyList.GBP.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GBP.cash.sell <= map.get(s2).currencyList.GBP.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case EUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.EUR.cash.sell >= map.get(s2).currencyList.EUR.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.EUR.cash.sell <= map.get(s2).currencyList.EUR.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case CHF:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CHF.cash.sell >= map.get(s2).currencyList.CHF.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CHF.cash.sell <= map.get(s2).currencyList.CHF.cash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                    }
+                    break;
+                case NonCash:
+                    switch (currencyType) {
+                        case AUD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.AUD.nonCash.sell >= map.get(s2).currencyList.AUD.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.AUD.nonCash.sell <= map.get(s2).currencyList.AUD.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case CAD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CAD.nonCash.sell >= map.get(s2).currencyList.CAD.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CAD.nonCash.sell <= map.get(s2).currencyList.CAD.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case XAU:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.XAU.nonCash.sell >= map.get(s2).currencyList.XAU.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.XAU.nonCash.sell <= map.get(s2).currencyList.XAU.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case USD:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.USD.nonCash.sell >= map.get(s2).currencyList.USD.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.USD.nonCash.sell <= map.get(s2).currencyList.USD.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case RUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.RUR.nonCash.sell >= map.get(s2).currencyList.RUR.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.RUR.nonCash.sell <= map.get(s2).currencyList.RUR.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case JPY:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.JPY.nonCash.sell >= map.get(s2).currencyList.JPY.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.JPY.nonCash.sell <= map.get(s2).currencyList.JPY.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GEL:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GEL.nonCash.sell >= map.get(s2).currencyList.GEL.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GEL.nonCash.sell <= map.get(s2).currencyList.GEL.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case GBP:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.GBP.nonCash.sell >= map.get(s2).currencyList.GBP.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.GBP.nonCash.sell <= map.get(s2).currencyList.GBP.nonCash.sell) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            }
+                        case EUR:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.EUR.nonCash.sell >= map.get(s2).currencyList.EUR.nonCash.sell) {
+                                    return 1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.EUR.nonCash.sell <= map.get(s2).currencyList.EUR.nonCash.sell) {
+                                    return 1;
+                                }
+                            }
+                        case CHF:
+                            if (sortOrder == SortOrderEnum.Ascending) {
+                                if (map.get(s1).currencyList.CHF.nonCash.sell >= map.get(s2).currencyList.CHF.nonCash.sell) {
+                                    return 1;
+                                }
+                            } else {
+                                if (map.get(s1).currencyList.CHF.nonCash.sell <= map.get(s2).currencyList.CHF.nonCash.sell) {
+                                    return 1;
+                                }
+                            }
+                    }
+                    break;
+            }
+            return 1;
+        }
+    }
 }

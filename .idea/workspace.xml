@@ -24,39 +24,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/ic_launcher-web.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortOrderEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortOrderEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortTypeEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/FilterHelperOrganization.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/FilterHelperOrganization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/presenter/BanksDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/presenter/BanksDataController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_banks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_banks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,33 +53,35 @@
       <file leaf-file-name="BanksFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="100" column="52" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
+            <state relative-caret-position="-2320">
+              <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#BanksFragment#0;class#BanksFragment#0" />
+                <element signature="method#onCreate#0;class#BanksFragment#0" />
+                <element signature="method#onCreateView#0;class#BanksFragment#0" />
                 <element signature="method#onViewCreated#0;class#BanksFragment#0" />
                 <element signature="e#3326#3541#0" expanded="true" />
                 <element signature="e#3540#3541#0" expanded="true" />
                 <element signature="method#displayError#0;class#BanksFragment#0" />
                 <element signature="method#findViews#0;class#BanksFragment#0" />
                 <element signature="method#populateViews#0;class#BanksFragment#0" />
-                <element signature="e#5823#5847#0" expanded="true" />
-                <element signature="e#5906#5934#0" expanded="true" />
-                <element signature="method#setListeners#0;class#BanksFragment#0" />
-                <element signature="e#6909#9445#0" expanded="true" />
-                <element signature="e#9444#9445#0" expanded="true" />
-                <element signature="e#9493#11993#0" expanded="true" />
-                <element signature="e#11992#11993#0" expanded="true" />
-                <element signature="e#12043#13026#0" expanded="true" />
-                <element signature="e#13025#13026#0" expanded="true" />
-                <element signature="e#13076#14059#0" expanded="true" />
-                <element signature="e#14058#14059#0" expanded="true" />
-                <element signature="e#14171#14387#0" expanded="true" />
-                <element signature="e#14386#14387#0" expanded="true" />
+                <element signature="e#6163#6187#0" expanded="true" />
+                <element signature="e#6246#6274#0" expanded="true" />
+                <element signature="e#7249#9857#0" expanded="true" />
+                <element signature="e#9856#9857#0" expanded="true" />
+                <element signature="e#9905#12475#0" expanded="true" />
+                <element signature="e#12474#12475#0" expanded="true" />
+                <element signature="e#12525#13508#0" expanded="true" />
+                <element signature="e#13507#13508#0" expanded="true" />
+                <element signature="e#13558#14541#0" expanded="true" />
+                <element signature="e#14540#14541#0" expanded="true" />
+                <element signature="e#14653#14869#0" expanded="true" />
+                <element signature="e#14868#14869#0" expanded="true" />
                 <element signature="method#onActivityResult#0;class#BanksFragment#0" />
                 <element signature="method#handleExchangeTypeChange#0;class#BanksFragment#0" />
-                <element signature="e#15321#15343#0" expanded="true" />
-                <element signature="e#15438#15464#0" expanded="true" />
+                <element signature="e#15803#15825#0" expanded="true" />
+                <element signature="e#15920#15946#0" expanded="true" />
                 <element signature="method#handleCurrencyTypeChange#0;class#BanksFragment#0" />
                 <element signature="method#showErrorDialog#0;class#BanksFragment#0" />
               </folding>
@@ -116,71 +89,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilterHelperOrganization.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FilterHelperOrganization.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/FilterHelperOrganization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
+            <state relative-caret-position="113">
+              <caret line="440" column="33" selection-start-line="440" selection-start-column="33" selection-end-line="440" selection-end-column="33" />
+              <folding>
+                <element signature="method#getOrganizationFilteredListByCurrencyTypeAndExchangeType#0;class#FilterHelperOrganization#0" />
+                <element signature="method#checkIfCurrencyListContainsExchangeTypeAndCurrencyType#0;class#FilterHelperOrganization#0" />
+                <element signature="method#getCurrencyListContainedInOrganizationForExchangeType#0;class#FilterHelperOrganization#0" />
+                <element signature="method#getOrganizationTransactionListByExchangeType#0;class#FilterHelperOrganization#0" />
+                <element signature="method#sortMapForPurchase#0;class#FilterHelperOrganization#0" />
+                <element signature="e#14600#14622#0" expanded="true" />
+                <element signature="method#sortMapBySale#0;class#FilterHelperOrganization#0" />
+                <element signature="e#14828#14850#0" expanded="true" />
+                <element signature="e#15428#15450#0" expanded="true" />
+                <element signature="e#28874#28896#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BanksAdapter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BanksAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="196" column="86" selection-start-line="196" selection-start-column="86" selection-end-line="196" selection-end-column="86" />
+            <state relative-caret-position="400">
+              <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#BanksAdapter#0;class#BanksAdapter#0" />
                 <element signature="method#onCreateViewHolder#0;class#BanksAdapter#0" />
                 <element signature="method#onBindViewHolder#0;class#BanksAdapter#0" />
+                <element signature="method#updateData#0;class#BanksAdapter#0" />
+                <element signature="e#2730#2731#0" expanded="true" />
+                <element signature="e#2767#2768#0" expanded="true" />
+                <element signature="class#DataAdapterViewHolder#0;class#BanksAdapter#0" />
+                <element signature="method#populatePurchaseAndSaleTextViews#0;class#BanksAdapter#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelperOrganization.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/HelperOrganization.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="12" column="86" selection-start-line="12" selection-start-column="86" selection-end-line="12" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragment_banks.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_banks.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="98" column="73" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BanksDataController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/presenter/BanksDataController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-              <folding>
-                <element signature="e#1519#1520#0" expanded="true" />
-                <element signature="e#1554#1555#0" expanded="true" />
-                <element signature="e#2559#2560#0" expanded="true" />
-                <element signature="e#2605#2606#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SortOrderEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortOrderEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -188,7 +133,7 @@
       <file leaf-file-name="DetailActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
+            <state relative-caret-position="408">
               <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
               <folding>
                 <element signature="e#7194#7195#0" expanded="true" />
@@ -231,8 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ollections.sort(o</find>
-      <find>context</find>
       <find>nonCash</find>
       <find>banksDataController</find>
       <find>OrganizationsId.ARARATBANK</find>
@@ -261,6 +204,8 @@
       <find>update</find>
       <find>liveData</find>
       <find>dataAdapter</find>
+      <find>updateResortData</find>
+      <find>updateOrganizationData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2573,9 +2518,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_banks.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortTypeEnum.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/presenter/BanksDataController.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/FilterHelperOrganization.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java" />
       </list>
     </option>
   </component>
@@ -2628,25 +2573,12 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="dialog" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="rateam" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="enums" type="462c0819:PsiDirectoryNode" />
+              <item name="helper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="RateAm" type="1abcf292:AndroidViewProjectNode" />
@@ -2665,7 +2597,7 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="R9G7N18419000083" />
+    <property name="device.picker.selection" value="1015faed6f163d05" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -2814,7 +2746,7 @@
     </task>
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -2825,7 +2757,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
@@ -2833,12 +2764,12 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.45887446" />
       <window_info anchor="right" id="Preview" order="3" weight="0.34861407" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Logcat" order="7" weight="0.019480519" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="7" sideWeight="0.49946696" visible="true" weight="0.45887446" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -2847,7 +2778,7 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.41450217" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.75757575" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -2896,50 +2827,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java</url>
-          <line>67</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/FilterHelperOrganization.java</url>
-          <line>149</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java</url>
-          <line>101</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="43" />
+      <option name="time" value="58" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="app">
-        <watch expression="organizationFilteredMap" />
-        <watch expression="banksDataController.getCurrencyType()" />
-        <watch expression="banksDataController.getExchangeType()" />
+        <watch expression="map.get(s1).currencyList.USD.cash.buy" />
+        <watch expression="map.get(s2).currencyList.USD.cash.buy" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/model/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/network/OrganizationsAPIService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -3250,21 +3147,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
-          <folding>
-            <element signature="e#7194#7195#0" expanded="true" />
-            <element signature="e#7239#7240#0" expanded="true" />
-            <element signature="method#setupRadioButtons#0;class#DetailActivity#0" />
-            <element signature="method#populateCurrencyRecyclerViews#0;class#DetailActivity#0" />
-            <element signature="method#onRequestPermissionsResult#0;class#DetailActivity#0" />
-            <element signature="method#makeACall#0;class#DetailActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/icons_sort_up_disabled.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3273,13 +3155,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/icons_sort_down_disabled.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortOrderEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortTypeEnum.java">
@@ -3326,57 +3201,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/FilterHelperOrganization.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/java/util/TreeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="33" column="101" selection-start-line="33" selection-start-column="101" selection-end-line="33" selection-end-column="101" />
+        <state relative-caret-position="324">
+          <caret line="165" column="39" selection-start-line="165" selection-start-column="38" selection-end-line="165" selection-end-column="39" />
+          <folding>
+            <element signature="e#7682#7683#0" expanded="true" />
+            <element signature="e#7726#7727#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/detail_view/view/DetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="99" column="20" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+          <folding>
+            <element signature="e#7194#7195#0" expanded="true" />
+            <element signature="e#7239#7240#0" expanded="true" />
+            <element signature="method#setupRadioButtons#0;class#DetailActivity#0" />
+            <element signature="method#populateCurrencyRecyclerViews#0;class#DetailActivity#0" />
+            <element signature="method#onRequestPermissionsResult#0;class#DetailActivity#0" />
+            <element signature="method#makeACall#0;class#DetailActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/enums/SortOrderEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="58" column="22" selection-start-line="58" selection-start-column="22" selection-end-line="58" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#BanksAdapter#0;class#BanksAdapter#0" />
+            <element signature="method#onCreateViewHolder#0;class#BanksAdapter#0" />
+            <element signature="method#onBindViewHolder#0;class#BanksAdapter#0" />
+            <element signature="method#updateData#0;class#BanksAdapter#0" />
+            <element signature="e#2730#2731#0" expanded="true" />
+            <element signature="e#2767#2768#0" expanded="true" />
+            <element signature="class#DataAdapterViewHolder#0;class#BanksAdapter#0" />
+            <element signature="method#populatePurchaseAndSaleTextViews#0;class#BanksAdapter#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/BanksFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="100" column="52" selection-start-line="100" selection-start-column="52" selection-end-line="100" selection-end-column="52" />
+        <state relative-caret-position="-2320">
+          <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#BanksFragment#0;class#BanksFragment#0" />
+            <element signature="method#onCreate#0;class#BanksFragment#0" />
+            <element signature="method#onCreateView#0;class#BanksFragment#0" />
             <element signature="method#onViewCreated#0;class#BanksFragment#0" />
             <element signature="e#3326#3541#0" expanded="true" />
             <element signature="e#3540#3541#0" expanded="true" />
             <element signature="method#displayError#0;class#BanksFragment#0" />
             <element signature="method#findViews#0;class#BanksFragment#0" />
             <element signature="method#populateViews#0;class#BanksFragment#0" />
-            <element signature="e#5823#5847#0" expanded="true" />
-            <element signature="e#5906#5934#0" expanded="true" />
-            <element signature="method#setListeners#0;class#BanksFragment#0" />
-            <element signature="e#6909#9445#0" expanded="true" />
-            <element signature="e#9444#9445#0" expanded="true" />
-            <element signature="e#9493#11993#0" expanded="true" />
-            <element signature="e#11992#11993#0" expanded="true" />
-            <element signature="e#12043#13026#0" expanded="true" />
-            <element signature="e#13025#13026#0" expanded="true" />
-            <element signature="e#13076#14059#0" expanded="true" />
-            <element signature="e#14058#14059#0" expanded="true" />
-            <element signature="e#14171#14387#0" expanded="true" />
-            <element signature="e#14386#14387#0" expanded="true" />
+            <element signature="e#6163#6187#0" expanded="true" />
+            <element signature="e#6246#6274#0" expanded="true" />
+            <element signature="e#7249#9857#0" expanded="true" />
+            <element signature="e#9856#9857#0" expanded="true" />
+            <element signature="e#9905#12475#0" expanded="true" />
+            <element signature="e#12474#12475#0" expanded="true" />
+            <element signature="e#12525#13508#0" expanded="true" />
+            <element signature="e#13507#13508#0" expanded="true" />
+            <element signature="e#13558#14541#0" expanded="true" />
+            <element signature="e#14540#14541#0" expanded="true" />
+            <element signature="e#14653#14869#0" expanded="true" />
+            <element signature="e#14868#14869#0" expanded="true" />
             <element signature="method#onActivityResult#0;class#BanksFragment#0" />
             <element signature="method#handleExchangeTypeChange#0;class#BanksFragment#0" />
-            <element signature="e#15321#15343#0" expanded="true" />
-            <element signature="e#15438#15464#0" expanded="true" />
+            <element signature="e#15803#15825#0" expanded="true" />
+            <element signature="e#15920#15946#0" expanded="true" />
             <element signature="method#handleCurrencyTypeChange#0;class#BanksFragment#0" />
             <element signature="method#showErrorDialog#0;class#BanksFragment#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/main_view/rates/viewpager_fragment/banks/view/adapter/BanksAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sargiskh/rateam/helper/FilterHelperOrganization.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="196" column="86" selection-start-line="196" selection-start-column="86" selection-end-line="196" selection-end-column="86" />
+        <state relative-caret-position="113">
+          <caret line="440" column="33" selection-start-line="440" selection-start-column="33" selection-end-line="440" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#BanksAdapter#0;class#BanksAdapter#0" />
-            <element signature="method#onCreateViewHolder#0;class#BanksAdapter#0" />
-            <element signature="method#onBindViewHolder#0;class#BanksAdapter#0" />
+            <element signature="method#getOrganizationFilteredListByCurrencyTypeAndExchangeType#0;class#FilterHelperOrganization#0" />
+            <element signature="method#checkIfCurrencyListContainsExchangeTypeAndCurrencyType#0;class#FilterHelperOrganization#0" />
+            <element signature="method#getCurrencyListContainedInOrganizationForExchangeType#0;class#FilterHelperOrganization#0" />
+            <element signature="method#getOrganizationTransactionListByExchangeType#0;class#FilterHelperOrganization#0" />
+            <element signature="method#sortMapForPurchase#0;class#FilterHelperOrganization#0" />
+            <element signature="e#14600#14622#0" expanded="true" />
+            <element signature="method#sortMapBySale#0;class#FilterHelperOrganization#0" />
+            <element signature="e#14828#14850#0" expanded="true" />
+            <element signature="e#15428#15450#0" expanded="true" />
+            <element signature="e#28874#28896#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -96,14 +96,18 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
     public void updateOrganizationData(Map<String, Organization> organizationMap) {
 
         BanksAdapter dataAdapter = (BanksAdapter) recyclerView.getAdapter();
-
-        if (dataAdapter != null && organizationMap != null) {
+        if (dataAdapter != null) {
             Map<String, Organization> organizationFilteredMap = FilterHelperOrganization.getOrganizationFilteredListByCurrencyTypeAndExchangeType(organizationMap, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
-            dataAdapter.updateData(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
-
-//           List<Organization> organizationList = FilterHelperOrganization.getOrganizationListByCurrencyType(responseOrganizations, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
-//           Collections.sort(organizationList, OrganizationComparatorForSaleByAscendingOrderFor);
+            if (banksDataController.getSortType() != SortTypeEnum.Unsorted) {
+                SortOrderEnum sortOrder = (banksDataController.getSortType() == SortTypeEnum.Purchase) ? banksDataController.getSortOrderForPurchase() : banksDataController.getSortOrderForSale();
+                Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForSale(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
+                dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
+            } else {
+                dataAdapter.updateData(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
+            }
         }
+
+        //TODO
         // Stop refresh animation
         swipeRefreshLayout.setRefreshing(false);
     }
@@ -162,7 +166,6 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
                     textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
                     banksDataController.setSortOrderForSale(SortOrderEnum.Descending);
                     textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
-
                 } else if (banksDataController.getSortType() == SortTypeEnum.Purchase) {
 
                     if (banksDataController.getSortOrderForPurchase() == SortOrderEnum.Descending) {
@@ -188,6 +191,7 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
                     }
                     banksDataController.setSortType(SortTypeEnum.Purchase);
                 }
+                sortData(banksDataController.getSortOrderForPurchase());
             }
         });
 
@@ -229,6 +233,8 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
                     }
                     banksDataController.setSortType(SortTypeEnum.Sale);
                 }
+
+                sortData(banksDataController.getSortOrderForSale());
             }
         });
 
@@ -318,7 +324,7 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
                 break;
         }
 
-        updateResortData();
+        updateFilteredData();
     }
 
     private void handleCurrencyTypeChange(Intent data) {
@@ -370,10 +376,10 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
                 break;
         }
 
-        updateResortData();
+        updateFilteredData();
     }
 
-    private void updateResortData() {
+    private void updateFilteredData() {
         Map<String, Organization> organizationMap = banksDataController.getData().getValue();
         updateOrganizationData(organizationMap);
     }
@@ -395,4 +401,21 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
         getFragmentManager().beginTransaction().add(dialogFragment,"ErrorMessageDialogFragment").commit();
     }
 
+    private void sortData(SortOrderEnum sortOrder) {
+        BanksAdapter dataAdapter = (BanksAdapter) recyclerView.getAdapter();
+        if (dataAdapter != null) {
+            Map<String, Organization> organizationFilteredMap = dataAdapter.getData();
+            if (banksDataController.getSortType() != SortTypeEnum.Unsorted) {
+                if (banksDataController.getSortType() == SortTypeEnum.Purchase) {
+                    Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForPurchase(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
+                    dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
+                } else if (banksDataController.getSortType() == SortTypeEnum.Sale) {
+                    Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForSale(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
+                    dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
+                }
+            } else {
+                dataAdapter.updateData(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
+            }
+        }
+    }
 }
