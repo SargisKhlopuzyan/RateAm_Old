@@ -27,6 +27,7 @@ public final class FilterHelperOrganization {
             }
         }
 
+
         return filteredOrganizationMap;
     }
 

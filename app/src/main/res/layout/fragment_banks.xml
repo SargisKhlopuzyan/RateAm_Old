@@ -85,7 +85,7 @@
                 android:maxLines="1"
                 android:text="@string/purchase"
                 android:drawablePadding="@dimen/item_recycler_view_banks_padding"
-                android:drawableRight="@drawable/icons_sort_down_enabled"
+                android:drawableRight="@drawable/icons_sort_down_disabled"
                 android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
 
             <TextView
@@ -96,7 +96,7 @@
                 android:layout_weight="1"
                 android:singleLine="true"
                 android:maxLines="1"
-                android:drawableRight="@drawable/icons_sort_up_disabled"
+                android:drawableRight="@drawable/icons_sort_down_disabled"
                 android:text="@string/sale_with_colon"/>
         </LinearLayout>
 

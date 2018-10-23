@@ -97,19 +97,13 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
 
         BanksAdapter dataAdapter = (BanksAdapter) recyclerView.getAdapter();
 
-        if (dataAdapter != null) {
+        if (dataAdapter != null && organizationMap != null) {
+            Map<String, Organization> organizationFilteredMap = FilterHelperOrganization.getOrganizationFilteredListByCurrencyTypeAndExchangeType(organizationMap, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
+            dataAdapter.updateData(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
 
-            LiveData<Map<String, Organization>> liveData = banksDataController.getData();
-            if (liveData.getValue() != null) {
-
-                Map<String, Organization> organizationFilteredMap = FilterHelperOrganization.getOrganizationFilteredListByCurrencyTypeAndExchangeType(organizationMap, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
-                dataAdapter.updateData(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
-
-//                List<Organization> organizationList = FilterHelperOrganization.getOrganizationListByCurrencyType(responseOrganizations, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
-//                Collections.sort(organizationList, OrganizationComparatorForSaleByAscendingOrderFor);
-            }
+//           List<Organization> organizationList = FilterHelperOrganization.getOrganizationListByCurrencyType(responseOrganizations, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
+//           Collections.sort(organizationList, OrganizationComparatorForSaleByAscendingOrderFor);
         }
-
         // Stop refresh animation
         swipeRefreshLayout.setRefreshing(false);
     }
@@ -136,6 +130,23 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         BanksAdapter banksAdapter = new BanksAdapter(banksDataController.getExchangeType(), banksDataController.getCurrencyType());
         recyclerView.setAdapter(banksAdapter);
+
+        if (banksDataController.getExchangeType() == ExchangeTypeEnum.Cash) {
+            buttonExchangeType.setText(getString(R.string.cash));
+        } else {
+            buttonExchangeType.setText(getString(R.string.non_cash));
+        }
+
+        if (banksDataController.getSortType() == SortTypeEnum.Unsorted) {
+            textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+            textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+        } else if (banksDataController.getSortType() == SortTypeEnum.Purchase) {
+            textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
+            textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+        } else {
+            textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+            textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
+        }
     }
 
     private void setListeners() {
@@ -143,43 +154,16 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
             @Override
             public void onClick(View v) {
 
-                if (banksDataController.getSortOrderForPurchase() == SortOrderEnum.Descending) {
-                    banksDataController.setSortOrderForPurchase(SortOrderEnum.Ascending);
-                    textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
-                } else {
-                    banksDataController.setSortOrderForPurchase(SortOrderEnum.Descending);
-                    textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_enabled,0);
-                }
+                if (banksDataController.getSortType() == SortTypeEnum.Unsorted) {
 
-                if (banksDataController.getSortType() == SortTypeEnum.Sale){
                     banksDataController.setSortType(SortTypeEnum.Purchase);
 
-                    if (banksDataController.getSortOrderForSale() == SortOrderEnum.Descending) {
-                        banksDataController.setSortOrderForSale(SortOrderEnum.Ascending);
-                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
-                    } else {
-                        banksDataController.setSortOrderForSale(SortOrderEnum.Descending);
-                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_enabled,0);
-                    }
-                }
-            }
-
-        });
-
-        textViewBankSale.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (banksDataController.getSortOrderForSale() == SortOrderEnum.Descending) {
-                    banksDataController.setSortOrderForSale(SortOrderEnum.Ascending);
-                    textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
-                } else {
+                    banksDataController.setSortOrderForPurchase(SortOrderEnum.Ascending);
+                    textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
                     banksDataController.setSortOrderForSale(SortOrderEnum.Descending);
-                    textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_enabled,0);
-                }
+                    textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
 
-                if (banksDataController.getSortType() == SortTypeEnum.Purchase){
-                    banksDataController.setSortType(SortTypeEnum.Sale);
+                } else if (banksDataController.getSortType() == SortTypeEnum.Purchase) {
 
                     if (banksDataController.getSortOrderForPurchase() == SortOrderEnum.Descending) {
                         banksDataController.setSortOrderForPurchase(SortOrderEnum.Ascending);
@@ -189,6 +173,61 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
                         textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_enabled,0);
                     }
 
+                } else {
+
+                    if (banksDataController.getSortOrderForPurchase() == SortOrderEnum.Descending) {
+                        banksDataController.setSortOrderForPurchase(SortOrderEnum.Ascending);
+                        textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
+                        banksDataController.setSortOrderForSale(SortOrderEnum.Descending);
+                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+                    } else {
+                        banksDataController.setSortOrderForPurchase(SortOrderEnum.Descending);
+                        textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+                        banksDataController.setSortOrderForSale(SortOrderEnum.Ascending);
+                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
+                    }
+                    banksDataController.setSortType(SortTypeEnum.Purchase);
+                }
+            }
+        });
+
+        textViewBankSale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (banksDataController.getSortType() == SortTypeEnum.Unsorted) {
+
+                    banksDataController.setSortType(SortTypeEnum.Sale);
+
+                    banksDataController.setSortOrderForSale(SortOrderEnum.Ascending);
+                    textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
+                    banksDataController.setSortOrderForPurchase(SortOrderEnum.Descending);
+                    textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+
+                } else if (banksDataController.getSortType() == SortTypeEnum.Sale) {
+
+                    if (banksDataController.getSortOrderForSale() == SortOrderEnum.Descending) {
+                        banksDataController.setSortOrderForSale(SortOrderEnum.Ascending);
+                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
+                    } else {
+                        banksDataController.setSortOrderForSale(SortOrderEnum.Descending);
+                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_enabled,0);
+                    }
+
+                } else {
+
+                    if (banksDataController.getSortOrderForSale() == SortOrderEnum.Descending) {
+                        banksDataController.setSortOrderForSale(SortOrderEnum.Ascending);
+                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_enabled,0);
+                        banksDataController.setSortOrderForPurchase(SortOrderEnum.Descending);
+                        textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_disabled,0);
+                    } else {
+                        banksDataController.setSortOrderForSale(SortOrderEnum.Descending);
+                        textViewBankSale.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_down_enabled,0);
+                        banksDataController.setSortOrderForPurchase(SortOrderEnum.Ascending);
+                        textViewBankPurchase.setCompoundDrawablesWithIntrinsicBounds(0,0, R.drawable.icons_sort_up_disabled,0);
+                    }
+                    banksDataController.setSortType(SortTypeEnum.Sale);
                 }
             }
         });

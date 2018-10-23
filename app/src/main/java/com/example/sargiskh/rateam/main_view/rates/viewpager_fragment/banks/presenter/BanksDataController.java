@@ -67,7 +67,7 @@ public class BanksDataController {
 
 
     //Sorted By
-    private SortTypeEnum sortType = SortTypeEnum.Purchase;
+    private SortTypeEnum sortType = SortTypeEnum.Unsorted;
 
     public void setSortType(SortTypeEnum sortedBy) {
         this.sortType = sortedBy;
@@ -79,7 +79,7 @@ public class BanksDataController {
 
 
     //Sort Order For Purchase
-    private SortOrderEnum sortOrderPurchase = SortOrderEnum.Descending;
+    private SortOrderEnum sortOrderPurchase = SortOrderEnum.Unsorted;
 
     public void setSortOrderForPurchase(SortOrderEnum sortOrder) {
         this.sortOrderPurchase = sortOrder;
@@ -91,7 +91,7 @@ public class BanksDataController {
 
 
     //Sort Order For Sale
-    private SortOrderEnum sortOrderSale = SortOrderEnum.Descending;
+    private SortOrderEnum sortOrderSale = SortOrderEnum.Unsorted;
 
     public void setSortOrderForSale(SortOrderEnum sortOrder) {
         this.sortOrderSale = sortOrder;
