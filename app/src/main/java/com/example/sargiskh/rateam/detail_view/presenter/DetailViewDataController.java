@@ -37,9 +37,6 @@ public class DetailViewDataController {
     }
 
     public void setData(ResponseBranches data) {
-        if (data == null) {
-            Log.e("LOG_TAG", "ResponseBranches == null");
-        }
         liveData.setValue(data);
     }
 

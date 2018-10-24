@@ -89,7 +89,6 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-
         detailViewPresenter = new DetailViewPresenter(this);
         detailViewDataController = DetailViewDataController.getInstance();
 
@@ -370,6 +369,12 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         dialogFragment.setArguments(bundle);
 
         getSupportFragmentManager().beginTransaction().add(dialogFragment,"ErrorMessageDialogFragment").commit();
+    }
+
+    @Override
+    public void onDestroy() {
+        detailViewDataController.getData().removeObservers(this);
+        super.onDestroy();
     }
 
 }
