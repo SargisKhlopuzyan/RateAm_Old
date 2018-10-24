@@ -36,8 +36,6 @@ public class DetailViewPresenter implements DetailViewPresenterInterface {
 
             @Override
             public void onFailure(Call<ResponseBranches> call, Throwable t) {
-                DetailViewDataController.getInstance().setData(null);
-                Log.e("LOG_TAG", "onFailure: " + t);
                 detailViewInterface.displayError(t.getMessage());
             }
         });
