@@ -4,8 +4,8 @@
     <dimen name="rates_radio_group_vertical_padding">8dp</dimen>
 
     <!--Banks Fragment-->
-    <dimen name="item_recycler_view_banks_padding">10dp</dimen>
-    <dimen name="item_recycler_view_banks_icon_size">35dp</dimen>
+    <dimen name="item_recycler_view_banks_padding">12dp</dimen>
+    <dimen name="item_recycler_view_banks_icon_size">30dp</dimen>
     <dimen name="item_recycler_view_banks_currency_icon_size">35dp</dimen>
     <dimen name="item_recycler_view_banks_currency_padding">15dp</dimen>
 

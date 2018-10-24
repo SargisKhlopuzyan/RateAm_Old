@@ -38,7 +38,7 @@ public class DetailViewBranchListAdapter extends RecyclerView.Adapter<DetailView
     @Override
     public DataAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View itemView = LayoutInflater.from(context).inflate(R.layout.item_recycler_view_branch_list, parent, false);
+        View itemView = LayoutInflater.from(context).inflate(R.layout.item_recycler_view_branch_detail_view, parent, false);
         return new DataAdapterViewHolder(itemView);
     }
 

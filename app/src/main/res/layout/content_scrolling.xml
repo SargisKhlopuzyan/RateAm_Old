@@ -104,7 +104,7 @@
                     android:id="@+id/textViewBankSale"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center"
+                    android:gravity="center_vertical|right"
                     android:layout_weight="1"
                     android:singleLine="true"
                     android:maxLines="1"
