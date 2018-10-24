@@ -111,7 +111,6 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
             }
         }
 
-        //TODO
         // Stop refresh animation
         swipeRefreshLayout.setRefreshing(false);
     }

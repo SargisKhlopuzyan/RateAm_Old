@@ -98,6 +98,7 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         detailViewDataController.setOrganizationId(organizationId);
 
         findViews();
+        setListeners();
 
         setSupportActionBar(toolbar);
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
@@ -105,6 +106,15 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
             int scrollRange = -1;
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+
+                if (verticalOffset == 0) {
+                    swipeRefreshLayout.setEnabled(true);
+                } else {
+                    if (!swipeRefreshLayout.isRefreshing()) {
+                        swipeRefreshLayout.setEnabled(false);
+                    }
+                }
+
                 if (scrollRange == -1) {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
@@ -129,6 +139,7 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
             }
         });
 
+        setupSwipeRefreshLayout();
         populateCurrencyRecyclerViews();
         populateBranchesRecyclerViews();
         setOrganizationName();
@@ -137,6 +148,20 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         if (liveData.getValue() == null) {
             detailViewPresenter.getOrganizationDetailData(detailViewDataController.getOrganizationId());
         }
+    }
+
+    private void setListeners() {
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Refresh items
+                detailViewPresenter.getOrganizationDetailData(detailViewDataController.getOrganizationId());
+            }
+        });
+    }
+
+    private void setupSwipeRefreshLayout() {
+        swipeRefreshLayout.setProgressViewOffset(false, 0, 300);
     }
 
     private void setOrganizationName() {
@@ -181,6 +206,8 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
 
     @Override
     public void displayError(String errorMessage) {
+        // Stop refresh animation
+        swipeRefreshLayout.setRefreshing(false);
         showErrorDialog(errorMessage);
     }
 
