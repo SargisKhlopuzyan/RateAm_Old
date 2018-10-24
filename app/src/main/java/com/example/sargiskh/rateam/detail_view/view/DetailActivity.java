@@ -157,7 +157,6 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
         return super.onOptionsItemSelected(item);
     }
 
-
     @Override
     public void updateData(ResponseBranches responseBranches) {
 

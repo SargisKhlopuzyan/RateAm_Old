@@ -36,8 +36,8 @@ public class DetailViewCurrencyListAdapter extends RecyclerView.Adapter<DetailVi
     public DetailViewCurrencyListAdapter(Organization organization, ExchangeTypeEnum exchangeType) {
         this.exchangeType = exchangeType;
 
-        transactionMapForCash = FilterHelperOrganization.getOrganizationTransactionListByExchangeType(organization, ExchangeTypeEnum.Cash);
-        transactionMapForNonCash = FilterHelperOrganization.getOrganizationTransactionListByExchangeType(organization, ExchangeTypeEnum.NonCash);
+        transactionMapForCash = FilterHelperOrganization.getOrganizationCurrencyMapByExchangeType(organization, ExchangeTypeEnum.Cash);
+        transactionMapForNonCash = FilterHelperOrganization.getOrganizationCurrencyMapByExchangeType(organization, ExchangeTypeEnum.NonCash);
 
         for (CurrencyTypeEnum currencyType : transactionMapForCash.keySet()) {
             currencyTypeForCash.add(currencyType);
@@ -88,8 +88,8 @@ public class DetailViewCurrencyListAdapter extends RecyclerView.Adapter<DetailVi
     public void setOrganization(Organization organization, ExchangeTypeEnum exchangeType) {
         this.exchangeType = exchangeType;
 
-        transactionMapForCash = FilterHelperOrganization.getOrganizationTransactionListByExchangeType(organization, ExchangeTypeEnum.Cash);
-        transactionMapForNonCash = FilterHelperOrganization.getOrganizationTransactionListByExchangeType(organization, ExchangeTypeEnum.NonCash);
+        transactionMapForCash = FilterHelperOrganization.getOrganizationCurrencyMapByExchangeType(organization, ExchangeTypeEnum.Cash);
+        transactionMapForNonCash = FilterHelperOrganization.getOrganizationCurrencyMapByExchangeType(organization, ExchangeTypeEnum.NonCash);
 
         for (CurrencyTypeEnum currencyType : transactionMapForCash.keySet()) {
             currencyTypeForCash.add(currencyType);

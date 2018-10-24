@@ -97,12 +97,16 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
 
         BanksAdapter dataAdapter = (BanksAdapter) recyclerView.getAdapter();
         if (dataAdapter != null) {
-            Map<String, Organization> organizationFilteredMap = FilterHelperOrganization.getOrganizationFilteredListByCurrencyTypeAndExchangeType(organizationMap, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
+
+            Map<String, Organization> organizationFilteredMap = FilterHelperOrganization.getOrganizationFilteredMapByCurrencyTypeAndExchangeType(organizationMap, banksDataController.getCurrencyType(), banksDataController.getExchangeType());
+
             if (banksDataController.getSortType() != SortTypeEnum.Unsorted) {
                 SortOrderEnum sortOrder = (banksDataController.getSortType() == SortTypeEnum.Purchase) ? banksDataController.getSortOrderForPurchase() : banksDataController.getSortOrderForSale();
                 Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForSale(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
+
                 dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
             } else {
+
                 dataAdapter.updateData(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
             }
         }
@@ -405,14 +409,13 @@ public class BanksFragment extends Fragment implements BanksFragmentInterface {
         BanksAdapter dataAdapter = (BanksAdapter) recyclerView.getAdapter();
         if (dataAdapter != null) {
             Map<String, Organization> organizationFilteredMap = dataAdapter.getData();
-            if (banksDataController.getSortType() != SortTypeEnum.Unsorted) {
-                if (banksDataController.getSortType() == SortTypeEnum.Purchase) {
-                    Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForPurchase(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
-                    dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
-                } else if (banksDataController.getSortType() == SortTypeEnum.Sale) {
-                    Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForSale(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
-                    dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
-                }
+
+            if (banksDataController.getSortType() == SortTypeEnum.Purchase) {
+                Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForPurchase(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
+                dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
+            } else if (banksDataController.getSortType() == SortTypeEnum.Sale) {
+                Map<String, Organization> organizationSortedMap = FilterHelperOrganization.sortMapForSale(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType(), sortOrder);
+                dataAdapter.updateData(organizationSortedMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
             } else {
                 dataAdapter.updateData(organizationFilteredMap, banksDataController.getExchangeType(), banksDataController.getCurrencyType());
             }

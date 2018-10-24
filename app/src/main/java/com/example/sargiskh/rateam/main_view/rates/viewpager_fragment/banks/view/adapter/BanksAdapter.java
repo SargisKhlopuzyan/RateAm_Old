@@ -115,93 +115,13 @@ public class BanksAdapter extends RecyclerView.Adapter<BanksAdapter.DataAdapterV
 
         switch (exchangeType) {
             case Cash:
-                switch (currencyType) {
-                    case AUD:
-                        textViewBankPurchase.setText(organization.currencyList.AUD.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.AUD.cash.sell.toString());
-                        break;
-                    case CAD:
-                        textViewBankPurchase.setText(organization.currencyList.CAD.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.CAD.cash.sell.toString());
-                        break;
-                    case XAU:
-                        textViewBankPurchase.setText(organization.currencyList.XAU.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.XAU.cash.sell.toString());
-                        break;
-                    case USD:
-                        textViewBankPurchase.setText(organization.currencyList.USD.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.USD.cash.sell.toString());
-                        break;
-                    case RUR:
-                        textViewBankPurchase.setText(organization.currencyList.RUR.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.RUR.cash.sell.toString());
-                        break;
-                    case JPY:
-                        textViewBankPurchase.setText(organization.currencyList.JPY.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.JPY.cash.sell.toString());
-                        break;
-                    case GEL:
-                        textViewBankPurchase.setText(organization.currencyList.GEL.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.GEL.cash.sell.toString());
-                        break;
-                    case GBP:
-                        textViewBankPurchase.setText(organization.currencyList.GBP.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.GBP.cash.sell.toString());
-                        break;
-                    case EUR:
-                        textViewBankPurchase.setText(organization.currencyList.EUR.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.EUR.cash.sell.toString());
-                        break;
-                    case CHF:
-                        textViewBankPurchase.setText(organization.currencyList.CHF.cash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.CHF.cash.sell.toString());
-                        break;
-                }
-                break;
+                textViewBankPurchase.setText(organization.currencyMap.get(currencyType.toString()).cash.buy.toString());
+                textViewBankSale.setText(organization.currencyMap.get(currencyType.toString()).cash.sell.toString());
             case NonCash:
-                switch (currencyType) {
-                    case AUD:
-                        textViewBankPurchase.setText(organization.currencyList.AUD.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.AUD.nonCash.sell.toString());
-                        break;
-                    case CAD:
-                        textViewBankPurchase.setText(organization.currencyList.CAD.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.CAD.nonCash.sell.toString());
-                        break;
-                    case XAU:
-                        textViewBankPurchase.setText(organization.currencyList.XAU.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.XAU.nonCash.sell.toString());
-                        break;
-                    case USD:
-                        textViewBankPurchase.setText(organization.currencyList.USD.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.USD.nonCash.sell.toString());
-                        break;
-                    case RUR:
-                        textViewBankPurchase.setText(organization.currencyList.RUR.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.RUR.nonCash.sell.toString());
-                        break;
-                    case JPY:
-                        textViewBankPurchase.setText(organization.currencyList.JPY.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.JPY.nonCash.sell.toString());
-                        break;
-                    case GEL:
-                        textViewBankPurchase.setText(organization.currencyList.GEL.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.GEL.nonCash.sell.toString());
-                        break;
-                    case GBP:
-                        textViewBankPurchase.setText(organization.currencyList.GBP.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.GBP.nonCash.sell.toString());
-                        break;
-                    case EUR:
-                        textViewBankPurchase.setText(organization.currencyList.EUR.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.EUR.nonCash.sell.toString());
-                        break;
-                    case CHF:
-                        textViewBankPurchase.setText(organization.currencyList.CHF.nonCash.buy.toString());
-                        textViewBankSale.setText(organization.currencyList.CHF.nonCash.sell.toString());
-                        break;
-                }
+                textViewBankPurchase.setText(organization.currencyMap.get(currencyType.toString()).nonCash.buy.toString());
+                textViewBankSale.setText(organization.currencyMap.get(currencyType.toString()).nonCash.sell.toString());
                 break;
         }
     }
+
 }
