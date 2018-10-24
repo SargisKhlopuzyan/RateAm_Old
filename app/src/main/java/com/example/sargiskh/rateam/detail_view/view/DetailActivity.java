@@ -302,10 +302,11 @@ public class DetailActivity extends AppCompatActivity implements DetailViewInter
             }
             String workingDays = branch.workhours.get(i).days.trim();
             if (workingDays.contains("-")) {
-                workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0))].toString() + " - " + DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(2))].toString();
+                workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0)) - 1].toString() + " - " + DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(2))- 1].toString();
                 workingDays = workingDays.substring(0, 1).toUpperCase() + workingDays.substring(1);
             } else {
-                workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0))].toString().toUpperCase();
+                workingDays = DaysOfWeekEnum.values()[Integer.parseInt("" + workingDays.charAt(0))- 1].toString();
+                workingDays = workingDays.substring(0, 1).toUpperCase() + workingDays.substring(1);
             }
 
             workingDayTime += workingDays + "   " + branch.workhours.get(i).hours;
