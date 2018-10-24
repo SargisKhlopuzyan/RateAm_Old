@@ -20,5 +20,6 @@
 
     <!--CollapsingToolbarLayout-->
     <dimen name="collapsing_toolbar_text_view_min_height">30dp</dimen>
+    <dimen name="item_recycler_view_branch_detail_view_padding">8dp</dimen>
 
 </resources>

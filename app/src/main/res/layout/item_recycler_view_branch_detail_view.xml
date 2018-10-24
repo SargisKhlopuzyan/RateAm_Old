@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
-    android:padding="@dimen/item_recycler_view_banks_padding"
+    android:padding="@dimen/item_recycler_view_branch_detail_view_padding"
     android:orientation="horizontal">
 
     <TextView
