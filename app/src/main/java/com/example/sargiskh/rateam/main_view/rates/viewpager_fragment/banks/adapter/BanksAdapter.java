@@ -15,8 +15,8 @@ import com.example.sargiskh.rateam.R;
 import com.example.sargiskh.rateam.detail_view.DetailActivity;
 import com.example.sargiskh.rateam.enums.CurrencyTypeEnum;
 import com.example.sargiskh.rateam.enums.ExchangeTypeEnum;
+import com.example.sargiskh.rateam.helper.FilterHelperOrganization;
 import com.example.sargiskh.rateam.helper.HelperOrganization;
-import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Currency;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Organization;
 import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.model.Transaction;
 import com.example.sargiskh.rateam.util.Constants;
@@ -32,6 +32,9 @@ public class BanksAdapter extends RecyclerView.Adapter<BanksAdapter.DataAdapterV
 
     private List<Organization> organizationList = new ArrayList();
     private List<String> organizationIdList = new ArrayList<>();
+
+    private float maxPurchaseValue;
+    private float minSaleValue;
 
     private ExchangeTypeEnum exchangeType;
     private CurrencyTypeEnum currencyType;
@@ -71,11 +74,9 @@ public class BanksAdapter extends RecyclerView.Adapter<BanksAdapter.DataAdapterV
 
         organizationList = HelperOrganization.getOrganizationList(organizationMap);
         organizationIdList = HelperOrganization.getOrganizationIdList(organizationMap);
-        List<Transaction> transactionList = new ArrayList<>();
-        for (Organization organization: organizationList) {
-            transactionList.add(organization.currencyMap.get(currencyType.toString()).cash);
-        }
 
+        maxPurchaseValue = FilterHelperOrganization.getMaxPurchaseValue(organizationList, exchangeType, currencyType);
+        minSaleValue = FilterHelperOrganization.getMinSaleValue(organizationList, exchangeType, currencyType);
         notifyDataSetChanged();
     }
 
@@ -123,16 +124,33 @@ public class BanksAdapter extends RecyclerView.Adapter<BanksAdapter.DataAdapterV
 
     private void populatePurchaseAndSaleTextViews(Organization organization, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType, TextView textViewPurchase, TextView textViewSale) {
 
+        Transaction transaction = null;
+
         switch (exchangeType) {
             case Cash:
-                textViewPurchase.setText(organization.currencyMap.get(currencyType.toString()).cash.buy.toString());
-                textViewSale.setText(organization.currencyMap.get(currencyType.toString()).cash.sell.toString());
+                transaction = organization.currencyMap.get(currencyType.toString()).cash;
+                textViewPurchase.setText(transaction.buy.toString());
+                textViewSale.setText(transaction.sell.toString());
                 break;
             case NonCash:
-                textViewPurchase.setText(organization.currencyMap.get(currencyType.toString()).nonCash.buy.toString());
-                textViewSale.setText(organization.currencyMap.get(currencyType.toString()).nonCash.sell.toString());
+                transaction = organization.currencyMap.get(currencyType.toString()).nonCash;
+                textViewPurchase.setText(transaction.buy.toString());
+                textViewSale.setText(transaction.sell.toString());
                 break;
         }
+
+        if (maxPurchaseValue == transaction.buy) {
+            textViewPurchase.setTextColor(context.getResources().getColor(R.color.colorPrimary));
+        } else {
+            textViewPurchase.setTextColor(context.getResources().getColor(android.R.color.black));
+        }
+
+        if (minSaleValue == transaction.sell) {
+            textViewSale.setTextColor(context.getResources().getColor(R.color.colorPrimary));
+        } else {
+            textViewSale.setTextColor(context.getResources().getColor(android.R.color.black));
+        }
+
     }
 
 }

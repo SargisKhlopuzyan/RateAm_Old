@@ -9,6 +9,7 @@ import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.mode
 
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -234,4 +235,60 @@ public final class FilterHelperOrganization {
         }
     }
 
+
+
+    // Method for getting the maximum value
+    public static float getMaxPurchaseValue(List<Organization> organizationList, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType){
+
+        if (organizationList == null || organizationList.size() == 0) {
+            return 0;
+        }
+
+        Organization organizationWithMaxPurchaseValue = organizationList.get(0);
+
+        switch (exchangeType) {
+            case Cash:
+                for(int i=1; i < organizationList.size(); i++){
+                    if(organizationList.get(i).currencyMap.get(currencyType.toString()).cash.buy > organizationWithMaxPurchaseValue.currencyMap.get(currencyType.toString()).cash.buy){
+                        organizationWithMaxPurchaseValue = organizationList.get(i);
+                    }
+                }
+                return organizationWithMaxPurchaseValue.currencyMap.get(currencyType.toString()).cash.buy;
+            case NonCash:
+                for(int i=1; i < organizationList.size(); i++){
+                    if(organizationList.get(i).currencyMap.get(currencyType.toString()).nonCash.buy > organizationWithMaxPurchaseValue.currencyMap.get(currencyType.toString()).nonCash.buy){
+                        organizationWithMaxPurchaseValue = organizationList.get(i);
+                    }
+                }
+                return organizationWithMaxPurchaseValue.currencyMap.get(currencyType.toString()).nonCash.buy;
+        }
+        return 0;
+    }
+
+    // Method for getting the minimum value
+    public static float getMinSaleValue(List<Organization> organizationList, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType){
+
+        if (organizationList == null || organizationList.size() == 0) {
+            return 0;
+        }
+
+        Organization organizationWithMinSaleValue = organizationList.get(0);
+        switch (exchangeType) {
+            case Cash:
+                for(int i = 1; i < organizationList.size(); i++){
+                    if(organizationList.get(i).currencyMap.get(currencyType.toString()).cash.sell < organizationWithMinSaleValue.currencyMap.get(currencyType.toString()).cash.sell){
+                        organizationWithMinSaleValue = organizationList.get(i);
+                    }
+                }
+                return organizationWithMinSaleValue.currencyMap.get(currencyType.toString()).cash.sell;
+            case NonCash:
+                for(int i = 1; i < organizationList.size(); i++){
+                    if(organizationList.get(i).currencyMap.get(currencyType.toString()).nonCash.sell < organizationWithMinSaleValue.currencyMap.get(currencyType.toString()).nonCash.sell){
+                        organizationWithMinSaleValue = organizationList.get(i);
+                    }
+                }
+                return organizationWithMinSaleValue.currencyMap.get(currencyType.toString()).nonCash.sell;
+        }
+        return 0;
+    }
 }
