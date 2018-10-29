@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
 
 import com.example.sargiskh.rateam.R;
-import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.view.BanksFragment;
+import com.example.sargiskh.rateam.main_view.rates.viewpager_fragment.banks.BanksFragment;
 import com.example.sargiskh.rateam.decoration_fragment.cb.CBFragment;
 import com.example.sargiskh.rateam.decoration_fragment.exchange_point.ExchangePointFragment;
 import com.example.sargiskh.rateam.main_view.viewpager.ViewPagerAdapter;

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:visibility="visible"
     android:clipToPadding="false"
-    tools:context=".detail_view.view.DetailActivity"
+    tools:context=".detail_view.DetailActivity"
     android:layout_height="match_parent">
 
 

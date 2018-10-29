@@ -62,7 +62,7 @@ public final class FilterHelperOrganization {
     }
 
 
-    public static Map<String, Organization> getOrganizationFilteredMapByCurrencyTypeAndExchangeType(Map<String, Organization> organizationMap, CurrencyTypeEnum currencyType, ExchangeTypeEnum exchangeType) {
+    public static Map<String, Organization> getOrganizationFilteredMapByExchangeTypeAndCurrencyType(Map<String, Organization> organizationMap, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType) {
 
         Map<String, Organization> filteredOrganizationMap = new HashMap<>();
 
@@ -107,8 +107,8 @@ public final class FilterHelperOrganization {
     }
 
 
-    public static TreeMap<String, Organization> sortMapForPurchase(Map<String, Organization> map, ExchangeTypeEnum getCurrencyTypeByString, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
-        Comparator<String> comparator = new ComparatorForPurchase(map, getCurrencyTypeByString, currencyType, sortOrder);
+    public static TreeMap<String, Organization> sortMapForPurchase(Map<String, Organization> map, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
+        Comparator<String> comparator = new ComparatorForPurchase(map, exchangeType, currencyType, sortOrder);
         //TreeMap is a map sorted by its keys.
         //The comparator is used to sort the TreeMap by keys.
         TreeMap<String, Organization> result = new TreeMap<String, Organization>(comparator);
@@ -116,8 +116,8 @@ public final class FilterHelperOrganization {
         return result;
     }
 
-    public static TreeMap<String, Organization> sortMapForSale(Map<String, Organization> map, ExchangeTypeEnum getCurrencyTypeByString, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
-        Comparator<String> comparator = new ComparatorForSale(map, getCurrencyTypeByString, currencyType, sortOrder);
+    public static TreeMap<String, Organization> sortMapForSale(Map<String, Organization> map, ExchangeTypeEnum exchangeType, CurrencyTypeEnum currencyType, SortOrderEnum sortOrder){
+        Comparator<String> comparator = new ComparatorForSale(map, exchangeType, currencyType, sortOrder);
         //TreeMap is a map sorted by its keys.
         //The comparator is used to sort the TreeMap by keys.
         TreeMap<String, Organization> result = new TreeMap<String, Organization>(comparator);
@@ -142,7 +142,6 @@ public final class FilterHelperOrganization {
 
         @Override
         public int compare(String s1, String s2) {
-
 
             Currency currency1 = map.get(s1).currencyMap.get(currencyType.toString());
             Currency currency2 = map.get(s2).currencyMap.get(currencyType.toString());

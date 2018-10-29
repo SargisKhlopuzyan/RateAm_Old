@@ -23,7 +23,7 @@
         android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
 
     <TextView
-        android:id="@+id/textViewBankPurchase"
+        android:id="@+id/textViewPurchase"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center_vertical|right"
@@ -33,7 +33,7 @@
         android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
 
     <TextView
-        android:id="@+id/textViewBankSale"
+        android:id="@+id/textViewSale"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:gravity="center_vertical|right"

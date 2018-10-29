@@ -113,8 +113,8 @@ public class DetailViewCurrencyListAdapter extends RecyclerView.Adapter<DetailVi
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
             textViewBankName = itemView.findViewById(R.id.textViewBankName);
-            textViewBankPurchase = itemView.findViewById(R.id.textViewBankPurchase);
-            textViewBankSale = itemView.findViewById(R.id.textViewBankSale);
+            textViewBankPurchase = itemView.findViewById(R.id.textViewPurchase);
+            textViewBankSale = itemView.findViewById(R.id.textViewSale);
         }
 
         public void bindData(Map<CurrencyTypeEnum, Transaction> transactionMap, CurrencyTypeEnum currencyType) {
